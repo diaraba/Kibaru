@@ -1,0 +1,61 @@
+{% extends 'hopital/base.html' %}
+{% load static %}
+
+    <head >
+        <title>Liste d'attente</title>
+        <link rel="stylesheet" href="{% static 'hopital\styles.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+        
+    </head>
+
+
+{% block content %}
+    <div class="container mt-2">
+        <h2 class="display-5 text-center mb-3 mt-3">Liste d'attente</h2>
+        <div class="text-center mt-2">
+            <img src="{% static 'images/attente.png' %}" alt="Image standard du médecin" style="max-width: 300px;">
+        </div>
+        <div class="row">    
+                <div class="col-md-6">
+                    {% for consultation in consultations %}
+                        <div class="card mb-3 p-2 actu text-center">
+                                <h2 >Consultations en attente</h2>
+                                <h6>{{consultation.date_consultation}}</h6>
+
+                    
+                                <span>Medecin: <p>{{ consultation.medecin}}</p></span>
+                                <span>Patient: <p>{{ consultation.patient}}</p></span>
+
+                                <a class="text-decoration-none text-black" href="{% url 'attente_detail' consultation.id %}">
+                                    <div>
+                                        <button type="button" class="mt-4 btn btn-light btn_background fa-solid fa-eye  color"></button>
+                                    </div>
+                                </a>   
+                        </div>
+                    {% endfor %}  
+                </div>
+
+                <div class="col-md-6">
+                    {% for rdv in rdvs %}
+                        <div class="card mb-3 p-2 actu text-center">
+                                <h2 >Consultations en attente</h2>
+                                <h6>{{rdv.date_rdv}}</h6>
+        
+
+                                <span>Medecin: <p>{{ rdv.medecin}}</p></span>
+                                <span>Patient: <p>{{ rdv.patient}}</p></span>
+
+                                <a class="text-decoration-none text-black" href="{% url 'attente_detail_rdv' rdv.id %}">
+                                    <div>
+                                        <button type="button" class="mt-4 btn btn-light btn_background fa-solid fa-eye  color"></button>
+                                    </div>
+                                </a>   
+                        </div>
+                    {% endfor %}  
+                </div>
+        </div>  
+    </div>   
+    
+{% endblock %}

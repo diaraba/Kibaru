@@ -1,0 +1,39 @@
+{% extends 'hopital/base.html' %}
+{% load static %}
+
+
+    <head >
+        <title>Liste diagnostics </title>
+        <link rel="stylesheet" href="{% static 'hopital\styles.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+
+    </head>
+
+
+{% block content %}
+    <div class="container mt-2">
+        <h2 class="display-5 text-center mb-3 mt-3">Diagnostic</h2>
+        <div class="row">
+                <div>    
+                    <a class="text-decoration-none fa fa-arrow-left" href="{% url 'detail_patient' patient.id %}"><button type="button" class="mt-2 mb-2 btn btn-primary"></button></a>
+                </div>  
+                {% for diagnostic in diagnostics %}
+                    <div class="col-md-6 mb-3">
+ 
+                        <div class="card p-1 h-100 actu text-center">
+                            <h3>{{diagnostic.patient.nom}}</h3>
+                            <h3>{{diagnostic.patient.prenom}}</h3>
+                            <h4>{{diagnostic.motif_consultation}}</h4>
+                            <h5>{{ diagnostic.date_diagnostic }}</h5>
+                            <p>{{diagnostic.anomalie_remarquee}} </p>
+                            <p>{{diagnostic.medecin.specialites}} </p>
+                            <a class="text-decoration-none mt-3" href="{% url 'diagnostic_detail' diagnostic.id %}">
+                                    <button type="button" class=" btn btn-light btn_background fa-solid fa-eye  color"></button>
+                            </a> 
+                        </div>
+                    </div>
+                {% endfor %}  
+        </div>  
+    </div>   
+{% endblock %}    

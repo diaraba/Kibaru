@@ -1,0 +1,43 @@
+{% extends 'hopital/base.html' %}
+{% load static %}
+
+        <head>
+            <title>Connexion</title>
+            <link rel="stylesheet" href="{% static 'hopital\styles.css' %}" />
+            <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />    
+        </head>
+        
+    {% block content %}
+        <div class="container mt-5">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header text-center back">Connexion</div>
+                        <div class="card-body actu3">
+                            <form method="post" class="lead">
+                                {% csrf_token %}
+                                {% for message in messages %}
+                                    <div class="alert alert-danger">{{ message }}</div>
+                                {% endfor %}
+                                <div class="form-group mb-4">
+                                    {{ form.username.label_tag }}
+                                    {{ form.username }}
+                                </div>
+
+                                
+                                <div class="form-group mb-3">
+                                    {{ form.password.label_tag }}
+                                    {{ form.password }}
+                                </div>
+                                <div class="form-group mb-3">
+                                    <button class="btn btn-light mt-5 form-control" type="submit">Connexion</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    {% endblock %}

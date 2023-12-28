@@ -1,0 +1,149 @@
+.actu {
+    background: rgb(234,252,255);
+    background: radial-gradient(circle, rgba(234,252,255,1) 28%, rgba(230,244,241,1) 95%)!important;
+    border: 1px solid rgb(234,252,255);
+    border-radius: 15px;
+}
+
+
+.actu1 {
+    background: rgb(234,252,255);
+    background: radial-gradient(circle, rgb(227, 232, 233) 28%, rgb(248, 252, 251) 95%)!important;
+    border: 1px solid rgb(232, 241, 243);
+    border-radius: 15px;
+    width: 80%!important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+
+.actu3 {
+    background: rgb(234,252,255);
+    background: radial-gradient(circle, rgba(234,252,255,1) 28%, rgba(230,244,241,1) 95%)!important;
+    border: 1px solid rgb(234,252,255);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.py-5 {
+    padding-top: 3rem!important;
+    padding-bottom: 3rem!important;
+    display: flex;
+    justify-content: center;
+}
+
+.center{
+    display: flex;
+    justify-content: center;    
+}
+
+.text_button{
+    font-size: small;
+    font-weight:lighter;
+    color: #394855 !important;
+}
+
+.btn_background{
+    background: white!important;
+}
+.color{
+    color: #2A272A !important;
+}
+
+.spacing{
+    display: flex !important;
+    justify-content: space-around !important;
+}
+
+.spacing1{
+    display: flex !important;
+    justify-content:flex-end !important;
+}
+
+.spacing2{
+ display: flex;
+ justify-content: space-between;
+}
+
+
+
+a.text-decoration-none.fa-solid.fa-arrow-left.text {
+    font-size: 12;
+}
+
+.kabaru-brand {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: #4285f4;
+    text-decoration: none;  /* Supprimer le soulignement du lien */
+}
+
+.kabaru-brand img {
+    margin-left: 10px;  /* Ajustez la marge entre le texte et l'image selon vos préférences */
+    max-height: 60px;  /* Ajustez la hauteur maximale de l'image selon vos préférences */
+    border-radius: 50%;  /* Forme de cercle */
+    background-color: white;  /* Fond blanc */
+    padding: 5px;  /
+}
+.bg{
+    background-color: #9AEEEC!important;
+}
+
+.logout{
+    font-size: 12px!important;
+}
+
+
+
+/* Drop down menu pour la connexion */
+li.dropdown {
+    display: flex;
+    align-items: center;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content div li a{
+   font-size: medium!important;
+
+}
+
+.dropdown-content div :hover{
+    background-color: #C3FCF1 !important;
+    color:black!important;
+
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Style pour la liste non ordonnée */
+.dropdown-content ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* Style pour les éléments de liste */
+.dropdown-content li {
+    padding: 8px 12px;
+}
+
+
+.back{
+    background-color: #9aeeec !important;
+    
+}

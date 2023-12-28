@@ -1,0 +1,38 @@
+{% extends 'hopital/base.html' %}
+{% load static %}
+
+    <head>
+        <meta charset="utf-8">
+        <title>Hosto App</title>
+        <link rel="stylesheet" href="{% static 'hopital\styles.css' %}" />
+        <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" />
+    
+    </head>
+
+
+{% block content %}    
+    <div class="container py-5">
+        <div class="text-center">
+            <h2 class="display-5  mb-3 mt-3">New Diagnostic</h2>
+            <form action="{% url 'ajouter_diagnostic_rdv' rdv.id %}" method="post" class="needs-validation" novalidate>  <!-- 1 -->
+                {% csrf_token %}  <!-- 2 -->
+                <div class="mb-3">
+                    <label for="{{ form.motif_consultation.id_for_label }}" class="form-label ">Motif consultation :</label>
+                    {{ form.motif_consultation }}
+                </div>
+
+                <div class="mb-3 ">
+                    <label for="{{ form.anomalie_remarquee.id_for_label }}" class="form-label mx-5">Anomalie remarquée :</label>
+                    {{ form.anomalie_remarquee }}
+                </div>
+                <button class="btn btn-primary btn-lg btn-block" type="submit">Create Patient</button>
+            </form>
+
+            <a href="{% url 'attente_detail_rdv' rdv.id %}" class="text_button  btn btn-light ">Back</a>
+
+        </div>
+        
+    </div>
+
+{% endblock %}
